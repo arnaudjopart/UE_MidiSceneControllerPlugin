@@ -29,7 +29,7 @@ class RUNTIMECONTROLLER_API UControllerDataAsset : public UDataAsset
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FControllerData> Tags;
+	TArray<FKey> Tags;
 };
 
 

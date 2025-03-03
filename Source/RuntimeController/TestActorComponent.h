@@ -19,11 +19,20 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere)
+	TArray<FKey> Keys;
 
 public:	
 	// Called every frame
+	UFUNCTION()
+	void OnInputReceived(FKey Key);
+	UFUNCTION(BlueprintCallable)
+	bool AddKey(FKey Key);
+	UFUNCTION(BlueprintCallable)
+	bool RemoveKey(FKey Key);
+	UFUNCTION(BlueprintCallable)
+	bool HasKey(FKey Key);
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	UPROPERTY(EditAnywhere, Category = "Controller")
 	FColor HighlightColor;
-		
 };
